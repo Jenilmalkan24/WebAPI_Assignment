@@ -1,4 +1,6 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Model.DBModels;
 using System.Reflection;
 
 // Scaffold-DbContext "Server=BRD-3917L13-L\\SQLEXPRESS;Database=Organization;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir DBModels -f
@@ -6,8 +8,8 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//builder.Services.AddDbContext<OrganizationContext>(options =>
-  //  options.UseSqlServer("Server=BRD-3917L13-L\\SQLEXPRESS;Database=Organization;Trusted_Connection=True;"));
+builder.Services.AddDbContext<OrganizationContext>(options =>
+  options.UseSqlServer("Server=BLR-7W5GL13-L\\SQLEXPRESS;Database=Organization;Trusted_Connection=True;"));
 
 // Add services to the container.
 

@@ -38,9 +38,9 @@ public partial class OrganizationContext : DbContext
         {
             entity.ToTable("Intern");
 
-            entity.Property(e => e.InternId).ValueGeneratedNever();
-            entity.Property(e => e.CurrentTrainings).HasMaxLength(50);
-            entity.Property(e => e.InternName).HasMaxLength(50);
+            entity.Property(e => e.InternId).ValueGeneratedNever().HasColumnName("Intern ID");
+            entity.Property(e => e.CurrentTrainings).HasColumnName("Current Trainings");
+            entity.Property(e => e.InternName).HasMaxLength(50).HasColumnName("Intern Name");
             entity.Property(e => e.Mentor).HasMaxLength(50);
         });
 
