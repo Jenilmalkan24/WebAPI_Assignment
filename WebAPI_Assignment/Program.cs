@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Model.DBModels;
@@ -7,6 +8,20 @@ using System.Reflection;
 //Scaffold-DbContext "Server=BLR-7W5GL13-L\SQLEXPRESS;Database=Organization;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir DBModels
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddFluentValidation(s =>
+{
+    s.RegisterValidatorsFromAssemblyContaining<Program>();
+    s.AutomaticValidationEnabled = false;
+
+    /*
+        // Validate child properties and root collection elements
+        s.ImplicitlyValidateChildProperties = true;
+        s.ImplicitlyValidateRootCollectionElements = true;
+        // Automatic registration of validators in assembly
+        s.RegisterValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+    */
+});
 
 builder.Services.AddDbContext<OrganizationContext>(options =>
   options.UseSqlServer("Server=BLR-7W5GL13-L\\SQLEXPRESS;Database=Organization;Trusted_Connection=True;"));
