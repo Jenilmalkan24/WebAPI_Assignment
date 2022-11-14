@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Model.DeveloperModels
 {
-    public class DeveloperValidation : AbstractValidator<Intern>
+    public class DeveloperValidation : AbstractValidator<Admin>
     {
         public DeveloperValidation()
         {
-            RuleFor(i => i.InternName).NotEmpty().WithMessage("{PropertyName} is a REQURIED field.");
+            RuleFor(i => i.AdminName).NotEmpty().WithMessage("{PropertyName} is a REQURIED field.");
         }
     }
 }

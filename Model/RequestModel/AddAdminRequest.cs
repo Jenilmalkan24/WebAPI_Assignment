@@ -9,14 +9,14 @@ namespace Model.RequestModel
     /// <summary>
     /// Schema for adding new student
     /// </summary>
-    public class AddInternRequest
+    public class AddAdminRequest
     {
-        public int? InternId { get; set; }
+        public int? AdminId { get; set; }
 
-        public string? InternName { get; set; }
+        public string? AdminName { get; set; }
 
-        public string Mentor { get; set; } = null!;
+        public string Manager { get; set; } = null!;
 
-        public string CurrentTrainings { get; set; } = null!;
+        public string Email { get; set; } = null!;
     }
 }

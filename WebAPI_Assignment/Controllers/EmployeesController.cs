@@ -17,8 +17,8 @@ namespace WebAPI_Assignment.Controllers
     /// Performing the basic CRUD Operations using Web API
     /// </summary>
     [ApiController]
-    [Route("CRUD Operations")]
-    public class OperationsController : ControllerBase
+    [Route("Employees")]
+    public class EmployeesController : ControllerBase
     {
         /*public IActionResult Index()
         {
@@ -28,12 +28,12 @@ namespace WebAPI_Assignment.Controllers
 
 
         /// <summary>
-        /// Fetching the Employee Details using GET() method
+        /// Fetching the employee details using GET() method
         /// </summary>
         /// <param name="employee"></param>
         /// <returns></returns>
 
-        [HttpGet("Fetch Employee Details")]
+        [HttpGet()]
         public string FetchEmployeeDetails()
         {
             //employee.employeeCurrentProject = "";
@@ -41,11 +41,11 @@ namespace WebAPI_Assignment.Controllers
         }
 
         /// <summary>
-        /// Creating a new Employee using POST() method
+        /// Adding a new employee using POST() method
         /// </summary>
         /// <param name="employee">Object to store the employee details</param>
         /// <returns></returns>
-        [HttpPost("AddEmployeeDetails")]
+        [HttpPost()]
         public Employee AddEmployeeDetails(Employee employee)
         {
             employee.employeeName = "Jenil";
@@ -57,11 +57,11 @@ namespace WebAPI_Assignment.Controllers
         }
 
         /// <summary>
-        /// Updating the Employee Details using PUT() method
+        /// Updating the employee details using PUT() method
         /// </summary>
         /// <param name="employee"></param>
         /// <returns></returns>
-        [HttpPut("Update Employee Details")]
+        [HttpPut()]
         public Employee UpdateEmployeeDetails(Employee employee)
         {
             employee.employeeName = "Jenil Malkan";
@@ -71,11 +71,11 @@ namespace WebAPI_Assignment.Controllers
 
 
         /// <summary>
-        /// Deleting an Employee using DELETE() method
+        /// Deleting an employee using DELETE() method
         /// </summary>
         /// <param name="employee"></param>
         /// <returns></returns>
-        [HttpDelete("Remove Employee Details")]
+        [HttpDelete()]
         public Employee RemoveEmployeeDetails(Employee employee)
         {
             employee.employeeName = "Jenil";

@@ -17,7 +17,7 @@ public partial class OrganizationContext : DbContext
 
     public virtual DbSet<Employee> Employees { get; set; }
 
-    public virtual DbSet<Intern> Interns { get; set; }
+    public virtual DbSet<Admin> Admins { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
@@ -34,20 +34,20 @@ public partial class OrganizationContext : DbContext
             entity.Property(e => e.JoiningDate).HasMaxLength(50);
         });
 
-        modelBuilder.Entity<Intern>(entity =>
+        modelBuilder.Entity<Admin>(entity =>
         {
-            entity.ToTable("Intern");
+            entity.ToTable("Admin");
 
 
 
-            entity.Property(e => e.InternId)
+            entity.Property(e => e.AdminId)
                  .ValueGeneratedNever()
-                 .HasColumnName("InternID");
-            entity.Property(e => e.CurrentTrainings).HasColumnName("CurrentTrainings");
-            entity.Property(e => e.InternName)
+                 .HasColumnName("AdminID");
+            entity.Property(e => e.Email).HasColumnName("Email");
+            entity.Property(e => e.AdminName)
                 .HasMaxLength(50)
-                .HasColumnName("InternName");
-            entity.Property(e => e.Mentor).HasMaxLength(50);
+                .HasColumnName("AdminName");
+            entity.Property(e => e.Manager).HasMaxLength(50);
         });
 
         OnModelCreatingPartial(modelBuilder);
